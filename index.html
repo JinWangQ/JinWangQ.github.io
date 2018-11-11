@@ -63,6 +63,84 @@
 
   
     
+    <h3 class="article-title"><a href="/2018/11/11/Dynamic-Programming/"><span>Dynamic Programming</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/11/Dynamic-Programming/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-11T06:16:02.000Z">
+          2018-11-11
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h1 id="Dynamic-Programming"><a href="#Dynamic-Programming" class="headerlink" title="Dynamic Programming"></a>Dynamic Programming</h1><h2 id="Basic"><a href="#Basic" class="headerlink" title="Basic"></a>Basic</h2><p><strong>Q : what is dynamic programming? </strong><br>A : To solve a problem based on old knowledge.</p>
+<p><strong>Example - <a href="https://www.mathsisfun.com/numbers/fibonacci-sequence.html" target="_blank" rel="noopener">Fibonacci sequence</a>  </strong></p>
+<blockquote>
+<p>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, …]<br><code>F(n) = F(n-1) + F(n-2)</code></p>
+</blockquote>
+<p>It’s not easy to get <code>F(100002)</code> unless we have <code>F(100001)</code> and <code>F(100000)</code>, so we consider using DP to figure out this problem since it is good at solving a problem based on old knowledge. First, we need something to store each state for future use, normally it can be an array <code>dp[]</code>. In Fibonacci, <code>dp[i]</code> is the i-th element of the sequence(i &gt;= 1).</p>
+<p><strong>Q: How actually DP does when solving a problem?</strong><br>A: Two patterns:</p>
+<ol>
+<li>Bottom up<br>To get <code>dp[n]</code>, we calculate array <code>dp</code> from <code>dp[0]</code> to <code>dp[n]</code>.</li>
+<li>Top down<br>To get <code>dp[n]</code> by recursion.</li>
+</ol>
+<h4 id="Bottom-up"><a href="#Bottom-up" class="headerlink" title="Bottom up"></a>Bottom up</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getFibonacci_bottomUp = <span class="function"><span class="params">n</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">let</span> dp = [<span class="number">0</span>, <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		dp[i - <span class="number">1</span>] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">3</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Top-down"><a href="#Top-down" class="headerlink" title="Top down"></a>Top down</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getFibonacci_topDown = <span class="function"><span class="params">n</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> n - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> getFibonacci(n - <span class="number">1</span>) + getFibonacci(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="DP-problems-from-leetcode"><a href="#DP-problems-from-leetcode" class="headerlink" title="DP problems from leetcode"></a>DP problems from leetcode</h2><h3 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a>Palindrome</h3><p><strong>Q: What is a palindrome</strong><br>A: A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10201. </p>
+<p><strong>Q: How to check if it is a palindrome</strong><br>A: See if it mirrors itself from it’s center.</p>
+<p><strong> #5 <a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">Longest Palindromic Substring</a></strong><br><strong>Solution:</strong><br>Starting from the first character to the last of the target string, check how long it can expand from current character to both left and right sides to be a palindrome. Update the start and end position of the palindrome and return the substring.<br><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/5LongestPalindromicSubstring/src.js" target="_blank" rel="noopener">My code</a></p>
+<p><strong> #132 <a href="https://leetcode.com/problems/palindrome-partitioning-ii/description/" target="_blank" rel="noopener">Palindrome Partitioning II</a></strong><br><strong>Description: </strong><br>Return the minimum cut(s) that can partition target s such that every substring is palindromic.<br><strong> Example:</strong></p>
+<blockquote>
+<p>Input: “aab”<br>Output: 1<br>Explanation: The palindrome partitioning [“aa”,”b”] could be produced using 1 cut.</p>
+</blockquote>
+<p><strong>Solution:</strong><br>In this problem, we just need to check if a substring is palindromic and then update the minimum cuts needed up to date . So we initialize an array dp[i] = i, it stores the maximum cost of cuts at i-th character, for example, <code>s = &quot;aaba&quot;</code>, initialized <code>dp = [0,1,2,3]</code>, <code>dp[3] = 3</code> means at most 3 cuts to partition s at <code>s.charAt(3)</code>, that is “a, a, b, a” (regard each comma as a cut). We update <code>dp</code> when a smaller cuts appeara.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> partition = <span class="function"><span class="params">s</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">let</span> n = s.length;</span><br><span class="line">	<span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">let</span> dp = [];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		dp[i] = i;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> mid = <span class="number">0</span>; mid &lt; n; mid++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> start = mid, end = mid; start &gt;= <span class="number">0</span> &amp;&amp; end &lt; n &amp;&amp; s.charAt(start) === s.charAt(end); start--, end++) &#123;</span><br><span class="line">			<span class="keyword">let</span> curCut = (start === <span class="number">0</span>) ? <span class="number">0</span> : dp[start - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">			dp[end] = <span class="built_in">Math</span>.min(dp[end], curCut);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> start = mid, end = mid + <span class="number">1</span>; start &gt;= <span class="number">0</span>, end &lt; n &amp;&amp; s.charAt(start) === s.charAt(end); start--, end++) &#123;</span><br><span class="line">			<span class="keyword">let</span> curCut = (start === <span class="number">0</span>) ? <span class="number">0</span> : dp[start - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">			dp[end] = <span class="built_in">Math</span>.min(dp[end], curCut);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/132PalindromePartitioningII/src.js" target="_blank" rel="noopener">My code</a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank" rel="noopener">Dynamic Programming - GeeksforGeeks</a></li>
+<li><a href="https://stackoverflow.com/questions/1065433/what-is-dynamic-programming" target="_blank" rel="noopener">What is dynamic programming? - stackOverflow</a></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/Palindrome/">Palindrome</a><a href="/tags/DP/">DP</a><a href="/tags/Algorithm/">Algorithm</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2018/11/06/Longest-Consecutive-Sequence/"><span>Longest Consecutive Sequence</span></a></h3>
     
   
