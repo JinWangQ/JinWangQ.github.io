@@ -63,6 +63,262 @@
 
   
     
+    <h3 class="article-title"><a href="/2018/11/15/Add-a-virtual-host-in-MAMP/"><span>Add a virtual host in MAMP</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/15/Add-a-virtual-host-in-MAMP/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-15T05:31:21.000Z">
+          2018-11-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><a href="https://www.mamp.info/en/" target="_blank" rel="noopener">MAMP</a> is a local Web development solution.</p>
+<ol>
+<li>Apache config</li>
+</ol>
+<ul>
+<li>Find apache config file at ‘/Applications/MAMP/conf/apache/httpd.conf’, open it in any editor</li>
+<li>Find this line <code>#Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf</code> and delete <code>&quot;#&quot;</code>, save fife.</li>
+</ul>
+<ol start="2">
+<li>vhost config</li>
+</ol>
+<ul>
+<li>Find apache config file at ‘/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf’, open it in any editor</li>
+<li><p>There are two vitual host examples look like this </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAdmin webmaster@dummy-host.example.com </span><br><span class="line">    DocumentRoot &quot;/Applications/MAMP/Library/docs/dummy-host.example.com&quot; //where your document located</span><br><span class="line">    ServerName dummy-host.example.com  //domain as you wish</span><br><span class="line">    ServerAlias www.dummy-host.example.com //alias optional</span><br><span class="line">    ErrorLog &quot;logs/dummy-host.example.com-error_log&quot; //error optional</span><br><span class="line">    CustomLog &quot;logs/dummy-host.example.com-access_log&quot; common </span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>My vitural host is like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot &quot;/xxxx/xxxx/xxxx/xxxx/test&quot;</span><br><span class="line">    ServerName api.com</span><br><span class="line">    ServerAlias api.com</span><br><span class="line">    ErrorLog &quot;logs/api.com-error_log&quot;</span><br><span class="line">    CustomLog &quot;logs/api.com-access_log&quot; common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>DocuementRoot</code> can be changed at <code>MAMP -&gt; preference -&gt; Web server</code></p>
+</li>
+</ul>
+<ol start="3">
+<li>Set the localhost(127.0.0.1) to the domain you wish</li>
+</ol>
+<ul>
+<li>In terminal or iTerm, run <code>$ sudo vi /etc/hosts</code></li>
+<li>Insert one line <code>127.0.0.1         api.com</code></li>
+</ul>
+<ol start="4">
+<li>An easy test</li>
+</ol>
+<ul>
+<li>In your Vitual host DocumentRoot, Create <code>index.php</code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Hello My Virtual Host"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li>Restart MAMP</li>
+</ol>
+<ul>
+<li>api.com is ready for your service<br><img src="https://i.loli.net/2018/11/15/5bed0060973e9.png" width="395px" height="118px" align="center" border="2"></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/MAMP/">MAMP</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/11/14/Browsers-Shortcuts/"><span>Browsers Shortcuts for MAC</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/14/Browsers-Shortcuts/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-15T04:22:18.000Z">
+          2018-11-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><i class="fas fa-bolt"></i> Chrome</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refresh Tab</td>
+<td>cmd + r</td>
+</tr>
+<tr>
+<td>Close Tab</td>
+<td>cmd + w</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><i class="fas fa-bolt"></i> Firefox with <a href="https://addons.mozilla.org/en-US/firefox/addon/saka-key/" target="_blank" rel="noopener">Saka key</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Refresh Tab</td>
+<td>r + r</td>
+</tr>
+<tr>
+<td>Close Tab</td>
+<td>x + x</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/11/14/Restful-API-Study-Notes/"><span>Restful API Study Notes</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/14/Restful-API-Study-Notes/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-14T17:31:57.000Z">
+          2018-11-14
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Basic"><a href="#Basic" class="headerlink" title=" Basic"></a><i class="fas fa-bolt"></i> Basic</h2><p><strong>Q: What does REST mean?</strong><br>A: REpresentational State Transfer. In REST Architecture everything is a resource. </p>
+<p><strong>Q: What is RESTful Web Services?</strong><br>A: RESTful Web Services are basically REST Architecture based Web Services, it uses HTTP Protocol. A resource is accessed by a common interface using HTTP standard methods(GET, POST, DELETE, PUT). Each resource is identified by URIs/ global IDs. A RESTful web service usually defines a URI, provides resource representation such as JSON and set of HTTP Methods.</p>
+<p><strong>Q: Benefits?</strong><br>A: RESTful web services are light weight, highly scalable and maintainable and are very commonly used to create APIs for web-based applications.</p>
+<p>In conclusion, RESTful web services make use of HTTP protcols as a medium of communication between cilent and server.</p>
+<h2 id="How-to-Design"><a href="#How-to-Design" class="headerlink" title=" How to Design"></a><i class="fas fa-bolt"></i> How to Design</h2><p>A URI looks like:<br><code>&lt;protocol&gt;://&lt;service-name&gt;/&lt;ResourceType&gt;/&lt;ResourceID&gt;</code></p>
+<p>Points should be considered:</p>
+<ol>
+<li>Use Plural Noun - Define Resouces</li>
+<li>Avoid using spaces - Use ‘_’ or ‘-‘ if the needed</li>
+<li>Lowercase letters only</li>
+<li>Maintain backward compaibility</li>
+<li>HTTP verb - use HTTP Verb like GET, PUT and DELETE to do the operations on the resource. But not to use operations name in the URI. (CRUD - create read update delete)</li>
+</ol>
+<h2 id="Tools-needed"><a href="#Tools-needed" class="headerlink" title=" Tools needed"></a><i class="fas fa-bolt"></i> Tools needed</h2><p>Chrome REST APL testing: <a href="https://chrome.google.com/webstore/detail/restlet-client-rest-api-t/aejoelaoggembcahagimdiliamlcdmfm" target="_blank" rel="noopener">Restlet Client - REST API Testing</a></p>
+<p>Local Web development solution: <a href="https://www.mamp.info/en/" target="_blank" rel="noopener">MAMP</a></p>
+<h2 id="Add-a-virtual-host-in-MAMP"><a href="#Add-a-virtual-host-in-MAMP" class="headerlink" title=" Add a virtual host in MAMP"></a><i class="fas fa-bolt"></i> <a href="">Add a virtual host in MAMP</a></h2><p><br></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li><a href="https://www.tutorialspoint.com/restful/" target="_blank" rel="noopener">RESTful web services tutorial</a></li>
+<li><a href="https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html" target="_blank" rel="noopener">Pagination, Filtering, and Sorting - Openstack</a></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/MAMP/">MAMP</a><a href="/tags/Notes/">Notes</a><a href="/tags/RESTful/">RESTful</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2018/11/11/Dynamic-Programming/"><span>Dynamic Programming</span></a></h3>
     
   
@@ -93,13 +349,14 @@
 </ol>
 <p><strong>Bottom up</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getFibonacci_bottomUp = <span class="function"><span class="params">n</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">let</span> dp = [<span class="number">0</span>, <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		dp[i - <span class="number">1</span>] = dp[i - <span class="number">2</span>] + dp[i - <span class="number">3</span>];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[n - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><strong>Top down</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getFibonacci_topDown = <span class="function"><span class="params">n</span> =&gt;</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (n === <span class="number">1</span> || n === <span class="number">2</span>) <span class="keyword">return</span> n - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> getFibonacci(n - <span class="number">1</span>) + getFibonacci(n - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="DP-problems-from-leetcode"><a href="#DP-problems-from-leetcode" class="headerlink" title=" DP problems from leetcode"></a><i class="fas fa-bolt"></i> DP problems from leetcode</h2><h3 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a><u>Palindrome</u></h3><p><strong>Q: What is a palindrome</strong><br>A: A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10201. </p>
-<p><strong>Q: How to check if it is a palindrome</strong><br>A: See if it mirrors itself from it’s center.</p>
-<p><strong> #5 <a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">Longest Palindromic Substring</a></strong><br><strong>Solution:</strong><br>Starting from the first character to the last of the target string, check how long it can expand from current character to both left and right sides to be a palindrome. Update the start and end position of the palindrome and return the substring.<br><i class="fab fa-github"></i> <a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/5LongestPalindromicSubstring/src.js" target="_blank" rel="noopener">My code</a></p>
-<p><strong> #132 <a href="https://leetcode.com/problems/palindrome-partitioning-ii/description/" target="_blank" rel="noopener">Palindrome Partitioning II</a></strong><br><strong>Description: </strong><br>Return the minimum cut(s) that can partition target s such that every substring is palindromic.<br><strong> Example:</strong><br>Input: “aab”<br>Output: 1<br>Explanation: The palindrome partitioning [“aa”,”b”] could be produced using 1 cut.<br><strong>Solution:</strong><br>In this problem, we just need to check if a substring is palindromic and then update the minimum cuts needed up to date . So we initialize an array dp[i] = i, it stores the maximum cost of cuts at i-th character, for example, <code>s = &quot;aaba&quot;</code>, initialized <code>dp = [0,1,2,3]</code>, <code>dp[3] = 3</code> means at most 3 cuts to partition s at <code>s.charAt(3)</code>, that is “a, a, b, a” (regard each comma as a cut). We update <code>dp</code> when a smaller cuts appeara.<br><i class="fab fa-github"></i> <a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/132PalindromePartitioningII/src.js" target="_blank" rel="noopener">My code</a></p>
-<h3 id="Unique-Paths"><a href="#Unique-Paths" class="headerlink" title="Unique Paths"></a><u>Unique Paths</u></h3><p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" alt="Unique Paths"><br><strong>#62 <a href="https://leetcode.com/problems/unique-paths/description/" target="_blank" rel="noopener">Unique Paths</a></strong><br><strong>Description: </strong><br>Given <code>m</code> and <code>n</code> represent a m*n grid, find out how many ways there is from start(top left) to finish(down right).<br><strong>Solution: </strong><br>It’s quite like Fibonacci sequence, the number of ways to <code>grid[i][j]</code> is <code>dp[i][j] = dp[i-1][j] + dp[i][j-1]</code>. We scan row by row to calculate how many ways needed at each grid. And this 2-D array can be simplified to 1-D since we can update current row on previous one.<br><i class="fab fa-github"></i> <a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/62UniquePaths/src.js" target="_blank" rel="noopener">My code</a></p>
-<p><strong>#63 <a href="https://leetcode.com/problems/unique-paths-ii/description/" target="_blank" rel="noopener">Unique Paths II</a></strong><br><strong>Description: </strong><br>Given a 2-D array with 0 and 1 represents a m*n grid, grid with 1 means there is an obstacle. Find out how many ways there is from start(top left) to finish(down right).<br><strong>Solution: </strong><br>The only difference with #62 is that we need to check if  <code>grid[i][j] === 1</code> (has an obstacle), if so, we set <code>dp[i] = 0</code>.<br><i class="fab fa-github"></i> <a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/63UniquePathsII/src.js" target="_blank" rel="noopener">My code</a></p>
-<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a><u>Other</u></h3><p><strong>#70 <a href="https://leetcode.com/problems/climbing-stairs/description/" target="_blank" rel="noopener">Climbing Stairs</a></strong><br><strong>Description: </strong><br>Climbing <code>n</code> steps stairs, climb 1 or 2 steps at a time, how many climbing ways.<br><strong>Solution: </strong><br>Still like Fibonacci sequence( actually it is Fibonacci), the number of ways to step<code>i</code> is <code>ways(i) = ways(i-1) + ways(i-2)</code>, the basic case is 1 and 2 for stairs with one step and two steps. Either top down or bottom up works.<br><i class="fab fa-github"></i> <a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/70ClimbingStairs/src.js" target="_blank" rel="noopener">My code</a></p>
+<h2 id="DP-problems-from-leetcode"><a href="#DP-problems-from-leetcode" class="headerlink" title=" DP problems from leetcode"></a><i class="fas fa-bolt"></i> DP problems from leetcode</h2><p><br></p>
+<h3 id="Palindrome"><a href="#Palindrome" class="headerlink" title="Palindrome"></a><u>Palindrome</u></h3><p><strong>Q: What is a palindrome</strong><br>A: A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10201. </p>
+<p><strong>Q: How to check if it is a palindrome</strong><br>A: See if it mirrors itself from it’s center.<br><br><br><strong> #5 <a href="https://leetcode.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">Longest Palindromic Substring</a></strong><br><strong>Solution:</strong><br>Starting from the first character to the last of the target string, check how long it can expand from current character to both left and right sides to be a palindrome. Update the start and end position of the palindrome and return the substring.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/5LongestPalindromicSubstring/src.js" target="_blank" rel="noopener">My code</a></strong><br><br><br><strong> #132 <a href="https://leetcode.com/problems/palindrome-partitioning-ii/description/" target="_blank" rel="noopener">Palindrome Partitioning II</a></strong><br><strong>Description: </strong><br>Return the minimum cut(s) that can partition target s such that every substring is palindromic.<br><strong> Example:</strong><br>Input: “aab”<br>Output: 1<br>Explanation: The palindrome partitioning [“aa”,”b”] could be produced using 1 cut.<br><strong>Solution:</strong><br>In this problem, we just need to check if a substring is palindromic and then update the minimum cuts needed up to date . So we initialize an array dp[i] = i, it stores the maximum cost of cuts at i-th character, for example, <code>s = &quot;aaba&quot;</code>, initialized <code>dp = [0,1,2,3]</code>, <code>dp[3] = 3</code> means at most 3 cuts to partition s at <code>s.charAt(3)</code>, that is “a, a, b, a” (regard each comma as a cut). We update <code>dp</code> when a smaller cuts appeara.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/132PalindromePartitioningII/src.js" target="_blank" rel="noopener">My code</a></strong><br><br><br><br></p>
+<h3 id="Unique-Paths"><a href="#Unique-Paths" class="headerlink" title="Unique Paths"></a><u>Unique Paths</u></h3><p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" alt="Unique Paths"></p>
+<p><strong>#62 <a href="https://leetcode.com/problems/unique-paths/description/" target="_blank" rel="noopener">Unique Paths</a></strong><br><strong>Description:</strong><br>Given <code>m</code> and <code>n</code> represent a m*n grid, find out how many ways there is from start(top left) to finish(down right).<br><strong>Solution:</strong><br>It’s quite like Fibonacci sequence, the number of ways to <code>grid[i][j]</code> is <code>dp[i][j] = dp[i-1][j] + dp[i][j-1]</code>. We scan row by row to calculate how many ways needed at each grid. And this 2-D array can be simplified to 1-D since we can update current row on previous one.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/62UniquePaths/src.js" target="_blank" rel="noopener">My code</a></strong><br><br><br><strong>#63 <a href="https://leetcode.com/problems/unique-paths-ii/description/" target="_blank" rel="noopener">Unique Paths II</a></strong><br><strong>Description:</strong><br>Given a 2-D array with 0 and 1 represents a mxn grid, grid with 1 means there is an obstacle. Find out how many ways there is from start(top left) to finish(down right).<br><strong>Solution:</strong><br>The only difference with #62 is that we need to check if  <code>grid[i][j] === 1</code> (has an obstacle), if so, we set <code>dp[i] = 0</code>.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/63UniquePathsII/src.js" target="_blank" rel="noopener">My code</a></strong><br> <br><br> <br></p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a><u>String</u></h3><p> <strong>#32 <a href="https://leetcode.com/problems/word-break/description/" target="_blank" rel="noopener">Word Break</a></strong><br><strong>Description: </strong><br>Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.<br><strong>Solution: </strong><br>We consider using DP, if the last segmented word is from Dict and previous words are, then running this string should return true. Boolean array <code>DP[i]</code> is used to store true or false whether s is satisfied at position i. A satisfied string’s <code>DP[s.length]</code> is true.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/139WordBreak/src.js" target="_blank" rel="noopener">My code</a></strong><br> <br><br> <br></p>
+<h3 id="Other"><a href="#Other" class="headerlink" title="Other"></a><u>Other</u></h3><p><strong>#32 <a href="https://leetcode.com/problems/longest-valid-parentheses/description/" target="_blank" rel="noopener">Longest Valid Parentheses</a></strong><br><strong>Description: </strong><br>Given a string containing ‘(‘ and ‘)’, find out the length of the longest well-formed parentheses substring. ‘()’ and ‘(())’ are consider valid.<br><strong>Solution: </strong><br>We consider using DP to solve this problem since the answer we need equals to 2( the last pair of ‘()’ when it exists) + valid longest length before the last pair.<br>We need an array <code>DP[]</code>, <code>DP[i]</code> represents the longest length end at <code>s.charAt(i)</code>, so <code>DP[i] = 0</code> when <code>s.charAt(i) = &#39;(&#39;</code> which is not an end parenthese.<br>For <code>s= &quot;()()(())&quot;</code>, <code>DP = [0,2,0,4,0,0,2,8]</code>.<br>When <code>s.charAt(i) = &#39;)&#39;</code> we consider if one char before is ‘(‘<br>if so, <code>DP[i] = 2 + DP[i-2] (when i &gt;2)</code><br>if not, that is again a ‘)’ before current ‘)’, we check the char at the position way bcak to <code>i-DP[i-1]-1</code>, this means, for example <code>s = &quot;(()())&quot;</code>, when <code>i = 5</code>, we check if char at <code>5 - DP[5-1] - 1 = 0</code> matches with <code>s.charAt(5)</code> to be a valid pair.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/32LongestValidParentheses/src.js" target="_blank" rel="noopener">My code</a></strong><br><br><br><strong>#70 <a href="https://leetcode.com/problems/climbing-stairs/description/" target="_blank" rel="noopener">Climbing Stairs</a></strong><br><strong>Description: </strong><br>Climbing <code>n</code> steps stairs, climb 1 or 2 steps at a time, how many climbing ways.<br><strong>Solution: </strong><br>Still like Fibonacci sequence( actually it is Fibonacci), the number of ways to step<code>i</code> is <code>ways(i) = ways(i-1) + ways(i-2)</code>, the basic case is 1 and 2 for stairs with one step and two steps. Either top down or bottom up works.<br><i class="fab fa-github"></i> <strong><a href="https://github.com/JinWangQ/MyLeetcode/blob/master/src/70ClimbingStairs/src.js" target="_blank" rel="noopener">My code</a></strong></p>
+<p><br></p>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
 <li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank" rel="noopener">Dynamic Programming - GeeksforGeeks</a></li>
 <li><a href="https://stackoverflow.com/questions/1065433/what-is-dynamic-programming" target="_blank" rel="noopener">What is dynamic programming? - stackOverflow</a></li>

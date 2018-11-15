@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Add a virtual host in MAMP | Hey Welcome | Keep Learning</title>
+
+  
+  <meta name="author" content="Jin Wang">
+  
+
+  
+  <meta name="description" content="MAMP is a local Web development solution.
+
+Apache config
+
+
+Find apache config file at ‘/Applications/MAMP/conf/apache/httpd.conf’, open it in any edit">
+  
+
+  
+  
+  <meta name="keywords" content="MAMP">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="Add a virtual host in MAMP">
+
+  <meta property="og:site_name" content="Hey Welcome">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hey Welcome" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hey Welcome</a>
+    </h1>
+    <p class="site-description">Keep Learning</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>Add a virtual host in MAMP</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/15/Add-a-virtual-host-in-MAMP/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-15T05:31:21.000Z">
+          2018-11-15
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <p><a href="https://www.mamp.info/en/" target="_blank" rel="noopener">MAMP</a> is a local Web development solution.</p>
+<ol>
+<li>Apache config</li>
+</ol>
+<ul>
+<li>Find apache config file at ‘/Applications/MAMP/conf/apache/httpd.conf’, open it in any editor</li>
+<li>Find this line <code>#Include /Applications/MAMP/conf/apache/extra/httpd-vhosts.conf</code> and delete <code>&quot;#&quot;</code>, save fife.</li>
+</ul>
+<ol start="2">
+<li>vhost config</li>
+</ol>
+<ul>
+<li>Find apache config file at ‘/Applications/MAMP/conf/apache/extra/httpd-vhosts.conf’, open it in any editor</li>
+<li><p>There are two vitual host examples look like this </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerAdmin webmaster@dummy-host.example.com </span><br><span class="line">    DocumentRoot &quot;/Applications/MAMP/Library/docs/dummy-host.example.com&quot; //where your document located</span><br><span class="line">    ServerName dummy-host.example.com  //domain as you wish</span><br><span class="line">    ServerAlias www.dummy-host.example.com //alias optional</span><br><span class="line">    ErrorLog &quot;logs/dummy-host.example.com-error_log&quot; //error optional</span><br><span class="line">    CustomLog &quot;logs/dummy-host.example.com-access_log&quot; common </span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>My vitural host is like:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    DocumentRoot &quot;/xxxx/xxxx/xxxx/xxxx/test&quot;</span><br><span class="line">    ServerName api.com</span><br><span class="line">    ServerAlias api.com</span><br><span class="line">    ErrorLog &quot;logs/api.com-error_log&quot;</span><br><span class="line">    CustomLog &quot;logs/api.com-access_log&quot; common</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>DocuementRoot</code> can be changed at <code>MAMP -&gt; preference -&gt; Web server</code></p>
+</li>
+</ul>
+<ol start="3">
+<li>Set the localhost(127.0.0.1) to the domain you wish</li>
+</ol>
+<ul>
+<li>In terminal or iTerm, run <code>$ sudo vi /etc/hosts</code></li>
+<li>Insert one line <code>127.0.0.1         api.com</code></li>
+</ul>
+<ol start="4">
+<li>An easy test</li>
+</ol>
+<ul>
+<li>In your Vitual host DocumentRoot, Create <code>index.php</code><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Hello My Virtual Host"</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="5">
+<li>Restart MAMP</li>
+</ol>
+<ul>
+<li>api.com is ready for your service<br><img src="https://i.loli.net/2018/11/15/5bed0060973e9.png" width="395px" height="118px" align="center" border="2"></li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/MAMP/">MAMP</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2018 Jin Wang
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
