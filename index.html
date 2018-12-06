@@ -63,6 +63,204 @@
 
   
     
+    <h3 class="article-title"><a href="/2018/12/05/Web-skill-Q-A/"><span>Web skill Q&amp;A</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/12/05/Web-skill-Q-A/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-12-05T19:37:55.000Z">
+          2018-12-05
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ol>
+<li><p><strong>What is MVC? Advantages and Disadvantages.</strong><br>MVC stands for Model, View, Controller. It’s a design pattern which seperates application into three layers of functionality.</p>
+<p> <strong>Model</strong> - specifies logical structure of data in an application. It acts as an interface between database and application.</p>
+<p> <strong>View</strong> - specifies all the UI logic, display the output of data.</p>
+<p> <strong>Controller</strong> - act as an interface between Model and View. It processes all the business logic and incoming requests, manipulate data using Model component, and interact with the Views to render the final output.</p>
+<p> Pros:</p>
+<ul>
+<li>Decoulping. - change code in one sec without disturbing other unrelated code.</li>
+<li>Support paralled development. - fast</li>
+<li><p>Ability to provide multiple views. </p>
+<p>Cons:</p>
+</li>
+<li><p>Increased complexity.</p>
+<p><img src="https://i.stack.imgur.com/B19Ea.png" alt="MVC"></p>
+</li>
+</ul>
+</li>
+<li><p><strong>Rest API</strong><br>RESTful APIs make use of HTTP protcols as a medium of communication between cilent and server. We try to have the URLs identify resources, and then use the HTTP actions GET, POST, PUT and DELETE to do stuff to them. </p>
+<p> Pros:</p>
+<ul>
+<li>Web API may be cleaner and easier to understand / discover.</li>
+<li>Help you organize even a very complex application into simple resources.</li>
+</ul>
+</li>
+<li><p><strong>JS, JS Library / framework</strong><br>Javascript is a programming language for the web, it can update and change both HTML and CSS, it can calculate, manipulate and validate data. Javascript Library/Framework are for Javascript-based applications.</p>
+<ul>
+<li><p>Library</p>
+<ul>
+<li><strong>jQuery</strong><br>Greatly simplified Javascript programming.<br>Features: DOM selection and manipulation. Special effects. Events. Ajax. Cross-browser support.</li>
+</ul>
+</li>
+<li><p>Framework</p>
+<ul>
+<li><strong>React</strong><br>For building fast and interactive user interfaces. We see a React Component as a piece of user interfaces. When building application with React, we are actually build a bunch of independent, isolated and reusable components. And with components we can build complex UI. Every React application is actually a tree of components. React reacts to state change. It is View in MVC. Component-based architecture.<br><a href="">Gallery by React</a>. <a href="">Music Player by React</a>. </li>
+<li><strong>Vue</strong><br>For building fast and interactive user interfaces. Component-based architecture.<br><a href="">Web Reader</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>JS Prototype Chain</strong><br>Inheritance in JavaScript is implemented through the prototype chain. Every normally created object, array, and function has a prototype chain of <strong>proto</strong> properties ending with Object.prototype at the top. This is why they’re all considered first-class objects in JavaScript.</p>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Interview/">Interview</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/12/04/Algorithm-review/"><span>Algorithm review</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/12/04/Algorithm-review/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-12-04T20:52:46.000Z">
+          2018-12-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ol>
+<li><p>twoSum - Array, Object<br>brute force</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> twoSum = <span class="function">(<span class="params">nums, target</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">1</span>; i++)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = i + <span class="number">1</span>; j &lt; nums.length; j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[j] == target)</span><br><span class="line">                <span class="keyword">return</span> [i, j];</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> use object - better performance</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> twoSum = <span class="function">(<span class="params">nums, target</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> num = nums[i];</span><br><span class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(target-num))</span><br><span class="line">            <span class="keyword">return</span> [obj[target-num], i];</span><br><span class="line">        obj[num] = i; <span class="comment">// stores number and its original index</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Longest Substring Without Repeating Characters - String, Set</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lengthOfLongestSubstring = <span class="function"><span class="params">s</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> strSet = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>, j = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; s.length &amp;&amp; j &lt; s.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!strSet.has(s[j]))&#123;</span><br><span class="line">            strSet.add(s[j++]);</span><br><span class="line">            res = <span class="built_in">Math</span>.max(res, j - i);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            strSet.delete(s[i++]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Reverse Integer</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverse = <span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> rev = <span class="built_in">Math</span>.abs(x).toString().split(<span class="string">''</span>).reverse().join(<span class="string">''</span>) * <span class="built_in">Math</span>.sign(x);</span><br><span class="line">    <span class="keyword">if</span>( rev &gt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span> || rev &lt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> rev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverse = <span class="function"><span class="params">x</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> abs = <span class="built_in">Math</span>.abs(x);</span><br><span class="line">    <span class="keyword">let</span> rev;</span><br><span class="line">    <span class="keyword">while</span>(abs &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> lastDigi = abs % <span class="number">10</span>;</span><br><span class="line">        rev = rev * <span class="number">10</span> + lastDigi;</span><br><span class="line">        abs = <span class="built_in">Math</span>.floor(abs / <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( rev &gt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>) - <span class="number">1</span> || rev &lt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">31</span>))</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> rev;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Letter Combinations of a Phone Number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letterCombinations = <span class="function">(<span class="params">digits, current = <span class="string">""</span>, res = []</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(digits.length == <span class="number">0</span> &amp;&amp; current == <span class="string">""</span>) <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">if</span>(digits.length &lt; <span class="number">1</span>) res.push(current);</span><br><span class="line">    <span class="keyword">const</span> Numbers = &#123;</span><br><span class="line">        <span class="number">2</span>: <span class="string">"abc"</span>,</span><br><span class="line">        <span class="number">3</span>: <span class="string">"def"</span>,</span><br><span class="line">        <span class="number">4</span>: <span class="string">"ghi"</span>,</span><br><span class="line">        <span class="number">5</span>: <span class="string">"jkl"</span>,</span><br><span class="line">        <span class="number">6</span>: <span class="string">"mno"</span>,</span><br><span class="line">        <span class="number">7</span>: <span class="string">"pqrs"</span>,</span><br><span class="line">        <span class="number">8</span>: <span class="string">"tuv"</span>,</span><br><span class="line">        <span class="number">9</span>: <span class="string">"wxyz"</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> numStr = Numbers[digits[<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; numStr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> letter = numStr[i];</span><br><span class="line">        letterCombinations(digits.slice(<span class="number">1</span>), current + letter, res);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Missing Number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> missingNumber = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> xor = <span class="number">0</span>, i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(; i &lt; nums.length; i++)&#123;</span><br><span class="line">        xor = xor ^ i ^ nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> xor ^ i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> missingNumber = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> expected = nums.length, sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        sum += nums[i];</span><br><span class="line">        expected += i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> expected - sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Single Number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> singleNumber = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        res ^= nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> ^ is super needed when dealing with finding a unique one.</p>
+</li>
+<li><p>Valid Anagram - Hash Table</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isAnagram = <span class="function">(<span class="params">s, t</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(s.length != t.length) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> dic = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">26</span>);</span><br><span class="line">    dic.fill(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> index = s.charCodeAt(i) - <span class="number">97</span>;</span><br><span class="line">        dic[index]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; t.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> index = t.charCodeAt(i) - <span class="number">97</span>;</span><br><span class="line">        dic[index]--;</span><br><span class="line">        <span class="keyword">if</span>(dic[index] &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dic.every(<span class="function"><span class="params">val</span> =&gt;</span> val == <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Largest Number</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> largestNumber = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> nums.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (b+<span class="string">''</span>+a) - (a+<span class="string">''</span>+b);</span><br><span class="line">    &#125;).join(<span class="string">''</span>).replace(<span class="regexp">/^0*/</span>, <span class="string">''</span>) || <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Count word frequency in a paragraph</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> countWord = <span class="function"><span class="params">s</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dic = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> wordArr = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; wordArr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> word = wordArr[i];</span><br><span class="line">        <span class="keyword">if</span> (!dic[word]) dic[word] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> dic[word]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (word <span class="keyword">in</span> dic)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"word: "</span> + word + <span class="string">" Count: "</span> + dic[word]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> for loop<br> <code>for (x in person)</code><br> x means key</p>
+<p> <code>for( y of preson)</code><br> y means a item of person</p>
+</li>
+<li><p>Sum of a number array</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> sumArr = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">        sumArr += nums[i];</span><br><span class="line">    <span class="keyword">return</span> sumArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Delete duplicates in a number array</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deleteDu = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">for</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">13. </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Get median of an array</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> getMedian = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">16. </span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">---</span></span><br><span class="line"><span class="string">Object</span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript</span><br><span class="line"><span class="keyword">let</span> car = &#123;&#125;;</span><br><span class="line">car.size = <span class="number">1</span>;</span><br><span class="line">car.color = <span class="string">"red"</span>; <span class="comment">// size and color are properties of car</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Set - store unique value of any type<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</span><br><span class="line">s.has(<span class="number">5</span>) <span class="comment">// true;</span></span><br><span class="line">s.has(<span class="number">6</span>) <span class="comment">// false;</span></span><br><span class="line">s.delete(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/Array/">Array</a><a href="/tags/String/">String</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2018/11/16/Array-Leetcode/"><span>Array - Leetcode</span></a></h3>
     
   
@@ -616,95 +814,11 @@
 
 
 
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/04/My-first-post/"><span>My first post - Set my own blog</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/04/My-first-post/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-04T17:12:56.000Z">
-          2018-11-04
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Prepare-installation"><a href="#Prepare-installation" class="headerlink" title="Prepare - installation"></a>Prepare - installation</h3><ol>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></li>
-<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
-<li>install Hexo<br><code>$ npm install -g hexo-cli</code> </li>
-</ol>
-<h3 id="Set-up-a-new-blog"><a href="#Set-up-a-new-blog" class="headerlink" title="Set up a new blog"></a>Set up a new blog</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init blog</span><br><span class="line"><span class="meta">$</span> cd blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
-<h3 id="Start-a-local-sever"><a href="#Start-a-local-sever" class="headerlink" title="Start a local sever"></a>Start a local sever</h3><p>run <code>$ hexo server</code><br>now my blog is hot reload at <code>http://localhost:4000/</code></p>
-<h3 id="Deploy-my-blog-to-Github"><a href="#Deploy-my-blog-to-Github" class="headerlink" title="Deploy my blog to Github"></a>Deploy my blog to Github</h3><ol>
-<li><p>Create a new repository<br>Repostoryname: ownername.github.io<br>e.g JinWangQ.github.io</p>
-</li>
-<li><p>Edit <code>_config.yml</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/JinWangQ/JinWangQ.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Install hexo-deployer-git<br><code>$ npm install hexo-deployer-git --save</code></p>
-</li>
-<li><p>Upload your site<br><code>$ hexo deploy</code><br>now <em><a href="http://jinwangq.github.io" target="_blank" rel="noopener">http://jinwangq.github.io</a></em> is available </p>
-</li>
-</ol>
-<h3 id="Write-a-new-post-what-i-am-now-doing-D"><a href="#Write-a-new-post-what-i-am-now-doing-D" class="headerlink" title="Write a new post (what i am now doing ;D)"></a>Write a new post (what i am now doing ;D)</h3><ul>
-<li>Create a new post<br><code>$ hexo new &quot;my first post&quot;</code></li>
-<li>Edit <code>source/_posts/My-first-post</code><br>Markdown supported</li>
-<li>Multiple tags<br><code>tags: [tag1,tag2,tag3]</code></li>
-</ul>
-<h3 id="Delete-a-post"><a href="#Delete-a-post" class="headerlink" title="Delete a post"></a>Delete a post</h3><ol>
-<li>Delete the post from <code>source/_post</code> folder</li>
-<li>Run <code>$ hexo clean</code></li>
-<li>Run <code>$ hexo generate</code></li>
-<li>Run <code>$ hexo deploy</code></li>
-</ol>
-<hr>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
-<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo</a></li>
-<li><a href="http://thief.one/2017/03/03/Hexo搭建博客教程/" target="_blank" rel="noopener">Hexo搭建博客教程</a> by <a href="https://thief.one/" target="_blank" rel="noopener">nMask</a></li>
-</ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Hexo/">Hexo</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
 
 <nav class="pagination">
   
+  
+  <a href="/page/2/" class="pagination-next">Next</a>
   
 </nav>
     </main>

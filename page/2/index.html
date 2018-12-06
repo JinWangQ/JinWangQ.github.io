@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Page 2 | Hey Welcome | Keep Learning</title>
+
+  
+  <meta name="author" content="Jin Wang">
+  
+
+  
+
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  
+
+  <meta property="og:site_name" content="Hey Welcome">
+
+  
+  <meta property="og:image" content="/favicon.ico">
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Hey Welcome" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">Hey Welcome</a>
+    </h1>
+    <p class="site-description">Keep Learning</p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+        <li><a href="/categories">Categories</a></li>
+      
+        <li><a href="/tags">Tags</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2018/11/04/My-first-post/"><span>My first post - Set my own blog</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/04/My-first-post/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-04T17:12:56.000Z">
+          2018-11-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="Prepare-installation"><a href="#Prepare-installation" class="headerlink" title="Prepare - installation"></a>Prepare - installation</h3><ol>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a></li>
+<li>install Hexo<br><code>$ npm install -g hexo-cli</code> </li>
+</ol>
+<h3 id="Set-up-a-new-blog"><a href="#Set-up-a-new-blog" class="headerlink" title="Set up a new blog"></a>Set up a new blog</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo init blog</span><br><span class="line"><span class="meta">$</span> cd blog</span><br><span class="line"><span class="meta">$</span> npm install</span><br></pre></td></tr></table></figure>
+<h3 id="Start-a-local-sever"><a href="#Start-a-local-sever" class="headerlink" title="Start a local sever"></a>Start a local sever</h3><p>run <code>$ hexo server</code><br>now my blog is hot reload at <code>http://localhost:4000/</code></p>
+<h3 id="Deploy-my-blog-to-Github"><a href="#Deploy-my-blog-to-Github" class="headerlink" title="Deploy my blog to Github"></a>Deploy my blog to Github</h3><ol>
+<li><p>Create a new repository<br>Repostoryname: ownername.github.io<br>e.g JinWangQ.github.io</p>
+</li>
+<li><p>Edit <code>_config.yml</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/JinWangQ/JinWangQ.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Install hexo-deployer-git<br><code>$ npm install hexo-deployer-git --save</code></p>
+</li>
+<li><p>Upload your site<br><code>$ hexo deploy</code><br>now <em><a href="http://jinwangq.github.io" target="_blank" rel="noopener">http://jinwangq.github.io</a></em> is available </p>
+</li>
+</ol>
+<h3 id="Write-a-new-post-what-i-am-now-doing-D"><a href="#Write-a-new-post-what-i-am-now-doing-D" class="headerlink" title="Write a new post (what i am now doing ;D)"></a>Write a new post (what i am now doing ;D)</h3><ul>
+<li>Create a new post<br><code>$ hexo new &quot;my first post&quot;</code></li>
+<li>Edit <code>source/_posts/My-first-post</code><br>Markdown supported</li>
+<li>Multiple tags<br><code>tags: [tag1,tag2,tag3]</code></li>
+</ul>
+<h3 id="Delete-a-post"><a href="#Delete-a-post" class="headerlink" title="Delete a post"></a>Delete a post</h3><ol>
+<li>Delete the post from <code>source/_post</code> folder</li>
+<li>Run <code>$ hexo clean</code></li>
+<li>Run <code>$ hexo generate</code></li>
+<li>Run <code>$ hexo deploy</code></li>
+</ol>
+<hr>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ol>
+<li><a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo</a></li>
+<li><a href="http://thief.one/2017/03/03/Hexo搭建博客教程/" target="_blank" rel="noopener">Hexo搭建博客教程</a> by <a href="https://thief.one/" target="_blank" rel="noopener">nMask</a></li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Hexo/">Hexo</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+
+<nav class="pagination">
+  
+  <a href="/" class="pagination-prev">Prev</a>
+  
+  
+</nav>
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    <br>
+    
+    &copy; 2018 Jin Wang
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
