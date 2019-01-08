@@ -63,6 +63,65 @@
 
   
     
+    <h3 class="article-title"><a href="/2018/11/06/Longest-Consecutive-Sequence/"><span>Longest Consecutive Sequence</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2018/11/06/Longest-Consecutive-Sequence/" rel="bookmark">
+        <time class="entry-date published" datetime="2018-11-06T15:14:50.000Z">
+          2018-11-06
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="128"><a href="#128" class="headerlink" title="#128"></a><a href="https://github.com/JinWangQ/MyLeetcode" target="_blank" rel="noopener">#128</a></h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><blockquote>
+<p>Input: [100, 4, 200, 1, 3, 2]<br>Output: 4<br>Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.</p>
+</blockquote>
+<h4 id="My-Accept-solution"><a href="#My-Accept-solution" class="headerlink" title="My Accept solution:"></a>My Accept solution:</h4><h5 id="Sorting-O-nlgn"><a href="#Sorting-O-nlgn" class="headerlink" title="Sorting  O(nlgn)"></a>Sorting  <em>O(nlgn)</em></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestConsecutive = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>) <span class="keyword">return</span> nums.length;</span><br><span class="line">    nums = nums.sort(numsort);</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>,</span><br><span class="line">        temp = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = nums.length<span class="number">-1</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] === nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">            max = <span class="built_in">Math</span>.max(temp, max);  </span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i] - <span class="number">1</span> == nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            temp = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        max = <span class="built_in">Math</span>.max(temp, max);    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max ;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numsort = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Hash-set-O-n"><a href="#Hash-set-O-n" class="headerlink" title="Hash-set O(n)"></a>Hash-set <em>O(n)</em></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> longestConsecutive = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>) <span class="keyword">return</span> nums.length;</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>;</span><br><span class="line">    nums.forEach(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!nums.includes(num<span class="number">-1</span>))&#123;</span><br><span class="line">            <span class="keyword">let</span> curNum = num;</span><br><span class="line">            <span class="keyword">let</span> temp = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(nums.includes(curNum+<span class="number">1</span>))</span><br><span class="line">                &#123;temp++;</span><br><span class="line">                curNum++&#125;</span><br><span class="line">            max = <span class="built_in">Math</span>.max(max, temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> max ;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>When the <code>nums</code> is very long, hash-set solution is a drain on memory, and when it is small, there is no big difference with sorting solution.</p>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/Leetcode-hard/">Leetcode-hard</a><a href="/tags/Union-find/">Union find</a><a href="/tags/array/">array</a>
+    </span>
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2018/11/04/My-first-post/"><span>My first post - Set my own blog</span></a></h3>
     
   

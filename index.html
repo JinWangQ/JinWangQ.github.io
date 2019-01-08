@@ -63,6 +63,65 @@
 
   
     
+    <h3 class="article-title"><a href="/2019/01/07/Java/"><span>Java Review</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2019/01/07/Java/" rel="bookmark">
+        <time class="entry-date published" datetime="2019-01-08T02:26:45.000Z">
+          2019-01-07
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <ol>
+<li><p>OOP concept<br>Q: what is OOP?<br>A: OOP stands for Objects Oriented programming. It is a methodology to design a program using classes and objects. It simplifies the softeare development and maintenance by providing some concepts like Inheritance, Polymorphism, Abstraction, Encapsulation.</p>
+<p> Q: What is class and object?<br> A: class is like the model, a kind, it is a set of objects with same attributes and methods. So, object is a more concrete concept.</p>
+<p> Q: What is Inheritance?<br> A: Inheritance is a mechanism. When a new class is created, we can use <code>extends</code> to let it inherit all the properties and methods from another exisiting class. The class derived from another class is called subclass, and the class from which subclass derived is called super class. A class can have only one superclass but a superclass can have more than one subclass.</p>
+<p> Q: what is Encapsulation?<br> A: Encapsulation in Java is a mechanism of wrapping the viables and methods together as a single unit. In encapsulation, the viables of a class will be hidden from other classes and can be accessed by public getter and setter methods.</p>
+<p> Q: what is Polymorphism?<br> A: Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.</p>
+<p> Q: what is abstract class?<br> A: An abstract class in Java is a superclass but cannnot be instantiated. It is used to state or define general characteristics. It can define what attributes and methods this class has, but not to assign the value to attributes ang for the methods, they only have the method name but no actual method body.</p>
+<p> Q: what is Overloading?<br> A: For overloading, it means we can use one identifier to define multiple methods, that is, we have a couple of methods with same method name but with different parameters. We use Overloading to deal with similar task but with slightly different set of perameters.</p>
+<p> Q: what is Override?<br> A: For a subclass, when it inheirt a the method from its superclass and rewrite the method body for this subclass’s specific use, it is override.</p>
+<p> Q: what is Interfaces<br> A: Interfaces is a reference type in Java, it is a collection of abstract methods. When a class implements an interface, it inherited the abstract methods of the interface. A class can implements as many interfaces as it needed. </p>
+<p> Q: what is packages?<br> A: Package is used to prevent name conflicts and control access.</p>
+<p> Q: Java Virtual Machine<br> A: JVM is an abstraction layer between a Java application and the underlying platform. When we code java, we have .jave file and complier can compile it to bytecodes, JVM has the interpreter to tell the physical machine to do the job. And this is why Java is cross-platform.</p>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2018/12/05/Web-skill-Q-A/"><span>Web skill Q&amp;A</span></a></h3>
     
   
@@ -100,7 +159,7 @@
 </li>
 </ul>
 </li>
-<li><p><strong>Rest API</strong><br>RESTful APIs make use of HTTP protcols as a medium of communication between cilent and server. We try to have the URLs identify resources, and then use the HTTP actions GET, POST, PUT and DELETE to do stuff to them. </p>
+<li><p><strong>Rest API</strong><br>RESTful APIs make use of HTTP protocols as a medium of communication between client and server. We try to have the URLs identify resources, and then use the HTTP actions GET, POST, PUT and DELETE to do stuff to them. </p>
 <p> Pros:</p>
 <ul>
 <li>Web API may be cleaner and easier to understand / discover.</li>
@@ -124,7 +183,7 @@
 </li>
 <li><p><strong>JS Prototype Chain</strong><br>Inheritance in JavaScript is implemented through the prototype chain. Every normally created object, array, and function has a prototype chain of <strong>proto</strong> properties ending with Object.prototype at the top. This is why they’re all considered first-class objects in JavaScript.</p>
 </li>
-<li><p><strong>synchronous and asynchronous</strong><br>synchronous: will be blocked at somewhere waiting a process to be done.<br>asynchronous: even if there is a procedure need some time  to process, the flowing processes will be excecuted.</p>
+<li><p><strong>synchronous and asynchronous</strong><br>synchronous: will be blocked at somewhere waiting a process to be done.<br>asynchronous: even if there is a procedure need some time  to process, the flowing processes will be excecuted .</p>
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">100</span>);</span><br><span class="line">$.getJSON(<span class="string">"https://jsonplaceholder.typicode.com/todos/1"</span>, data =&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">300</span>);</span><br></pre></td></tr></table></figure>
@@ -188,7 +247,6 @@
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> twoSum = <span class="function">(<span class="params">nums, target</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> obj = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> num = nums[i];</span><br><span class="line">        <span class="keyword">if</span>(obj.hasOwnProperty(target-num))</span><br><span class="line">            <span class="keyword">return</span> [obj[target-num], i];</span><br><span class="line">        obj[num] = i; <span class="comment">// stores number and its original index</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> Object</p>
  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> car = &#123;&#125;;</span><br><span class="line">car.size = <span class="number">1</span>;</span><br><span class="line">car.color = <span class="string">"red"</span>; <span class="comment">// size and color are properties of car</span></span><br></pre></td></tr></table></figure>
-<p> 借用了</p>
 </li>
 <li><p>Longest Substring Without Repeating Characters - String, Set</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> lengthOfLongestSubstring = <span class="function"><span class="params">s</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> strSet = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>, j = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; s.length &amp;&amp; j &lt; s.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!strSet.has(s[j]))&#123;</span><br><span class="line">            strSet.add(s[j++]);</span><br><span class="line">            res = <span class="built_in">Math</span>.max(res, j - i);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            strSet.delete(s[i++]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -215,6 +273,7 @@
 </li>
 <li><p>Largest Number</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> largestNumber = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> nums.sort(<span class="function">(<span class="params">a,b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (b+<span class="string">''</span>+a) - (a+<span class="string">''</span>+b);</span><br><span class="line">    &#125;).join(<span class="string">''</span>).replace(<span class="regexp">/^0*/</span>, <span class="string">''</span>) || <span class="string">'0'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> The math in this function is that, when compare two numbers we want to have the number with larger starting number. So we concatenate two numbers to compare to see which kind of concatenation is better.(a+b or b+a)</p>
 </li>
 <li><p>Count word frequency in a paragraph</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> countWord = <span class="function"><span class="params">s</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> dic = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> wordArr = s.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; wordArr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> word = wordArr[i];</span><br><span class="line">        <span class="keyword">if</span> (!dic[word]) dic[word] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> dic[word]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (word <span class="keyword">in</span> dic)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"word: "</span> + word + <span class="string">" Count: "</span> + dic[word]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -225,7 +284,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> sumArr = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">        sumArr += nums[i];</span><br><span class="line">    <span class="keyword">return</span> sumArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Remove duplicates in a number array</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deleteDu = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">1</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">    <span class="comment">//sort it</span></span><br><span class="line">    nums = nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] != nums[i<span class="number">-1</span>])</span><br><span class="line">            nums[index++] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.slice(<span class="number">0</span>, index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deleteDu = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length == <span class="number">1</span> || nums.length == <span class="number">0</span>) <span class="keyword">return</span> nums;</span><br><span class="line">    <span class="comment">//sort it</span></span><br><span class="line">    nums = nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] != nums[i<span class="number">-1</span>])</span><br><span class="line">            nums[index++] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.slice(<span class="number">0</span>, index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Remove duplicates in a number array II (appear at most twice)</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> removeDu = <span class="function"><span class="params">nums</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length &lt; <span class="number">3</span>) <span class="keyword">return</span> nums; </span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">2</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="comment">//actually compare it with the 'new' array</span></span><br><span class="line">        <span class="keyword">if</span>(nums[i] &gt; nums[index<span class="number">-2</span>])</span><br><span class="line">            nums[index++] = nums[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.slice(<span class="number">0</span>, index)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -763,65 +822,6 @@
     <span class="post-tags">
       <i class="icon-tags"></i>
         <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/Palindrome/">Palindrome</a><a href="/tags/DP/">DP</a><a href="/tags/Algorithm/">Algorithm</a>
-    </span>
-    
-
-    </div>
-
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2018/11/06/Longest-Consecutive-Sequence/"><span>Longest Consecutive Sequence</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2018/11/06/Longest-Consecutive-Sequence/" rel="bookmark">
-        <time class="entry-date published" datetime="2018-11-06T15:14:50.000Z">
-          2018-11-06
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="128"><a href="#128" class="headerlink" title="#128"></a><a href="https://github.com/JinWangQ/MyLeetcode" target="_blank" rel="noopener">#128</a></h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h4><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
-<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><blockquote>
-<p>Input: [100, 4, 200, 1, 3, 2]<br>Output: 4<br>Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.</p>
-</blockquote>
-<h4 id="My-Accept-solution"><a href="#My-Accept-solution" class="headerlink" title="My Accept solution:"></a>My Accept solution:</h4><h5 id="Sorting-O-nlgn"><a href="#Sorting-O-nlgn" class="headerlink" title="Sorting  O(nlgn)"></a>Sorting  <em>O(nlgn)</em></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestConsecutive = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>) <span class="keyword">return</span> nums.length;</span><br><span class="line">    nums = nums.sort(numsort);</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>,</span><br><span class="line">        temp = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = nums.length<span class="number">-1</span>; i &gt; <span class="number">0</span>; i--)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] === nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">            max = <span class="built_in">Math</span>.max(temp, max);  </span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[i] - <span class="number">1</span> == nums[i<span class="number">-1</span>])&#123;</span><br><span class="line">            temp++;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            temp = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        max = <span class="built_in">Math</span>.max(temp, max);    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max ;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numsort = <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="Hash-set-O-n"><a href="#Hash-set-O-n" class="headerlink" title="Hash-set O(n)"></a>Hash-set <em>O(n)</em></h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> longestConsecutive = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.length &lt; <span class="number">2</span>) <span class="keyword">return</span> nums.length;</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>;</span><br><span class="line">    nums.forEach(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!nums.includes(num<span class="number">-1</span>))&#123;</span><br><span class="line">            <span class="keyword">let</span> curNum = num;</span><br><span class="line">            <span class="keyword">let</span> temp = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(nums.includes(curNum+<span class="number">1</span>))</span><br><span class="line">                &#123;temp++;</span><br><span class="line">                curNum++&#125;</span><br><span class="line">            max = <span class="built_in">Math</span>.max(max, temp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> max ;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>When the <code>nums</code> is very long, hash-set solution is a drain on memory, and when it is small, there is no big difference with sorting solution.</p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-    
-
-    <span class="post-tags">
-      <i class="icon-tags"></i>
-        <a href="/tags/Leetcode/">Leetcode</a><a href="/tags/Leetcode-hard/">Leetcode-hard</a><a href="/tags/Union-find/">Union find</a><a href="/tags/array/">array</a>
     </span>
     
 
